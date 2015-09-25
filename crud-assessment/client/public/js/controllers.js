@@ -1,5 +1,6 @@
 app.controller('BeerController', function($scope, httpFactory, $timeout, $http) {
   $scope.success = false;
+  $scope.message = '';
   $scope.beer = {};
   $scope.edit = false;
   getBeers = function(url) {
@@ -31,6 +32,9 @@ function messageTimeout() {
         httpFactory.delete('/api/v1/beer/' + id)
         .then(function(response) {
           console.log(response.data);
+          $scope.success = true;
+          $scope.message = "Deleted beer! Woohoo!";
+          $timeout(messageTimeout, 5000);
           getBeers('api/v1/beers');
         });
       };
@@ -67,10 +71,4 @@ function messageTimeout() {
 
 
 
-//     for (var i = 0; i < beers.length; i++) {
-//       if (name === beers[i].name) {
-//         $http.delete('api/v1/beer/:id')
-//           .then(function(response) {
-//         }
-//     };
-//   };
+
