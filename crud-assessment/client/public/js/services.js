@@ -2,7 +2,7 @@ app.factory("httpFactory", ['$http', function($http){
   var obj = {};
 
   // get request
-  obj.get = function(url) {
+  obj.getAll = function(url) {
     return $http.get(url);
   };
 
@@ -10,9 +10,17 @@ app.factory("httpFactory", ['$http', function($http){
     return $http.post(url, payload);
   };
 
-  // obj.delete = function(url) {
-  //   return $http.delete(url);
-  // };
+  obj.delete = function(url, id) {
+    return $http.delete(url, id);
+  };
+
+  obj.getSingle = function(url, id) {
+    return $http.get(url, id);
+  };
+
+  obj.put = function(url, id, payload) {
+    return $http.put(url, id, payload);
+  };
 
   return obj;
 }]);
