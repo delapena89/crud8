@@ -59,6 +59,9 @@ function messageTimeout() {
         $scope.beerEdit.type = '';
         $scope.beerEdit.abv = '';
         $scope.edit = false;
+        $scope.success = true;
+        $scope.message = "Edited beer! Woohoo!";
+        $timeout(messageTimeout, 5000);
         getBeers('api/v1/beers');
     });
   };
