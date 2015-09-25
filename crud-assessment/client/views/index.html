@@ -13,7 +13,7 @@
 
   <div class="add-beer">
 
-    <h1 class="text-center">Add a Beer</h1>
+    <h1 class="text-center whitetext">Add a Beer</h1>
 
     <form>
       <div class="form-group">
@@ -40,18 +40,18 @@
     <h2 class="text-center"></h2>
     <table class="table">
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>ABV</th>
+        <tr class="whitetext">
+          <th><h2>Name</h2></th>
+          <th><h2>Type</h2></th>
+          <th><h2>ABV</h2></th>
           <th colspan = "3"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class='whitetext'>
         <tr ng-repeat='beer in beers'>
-          <td>{{beer.name}}</td>
-          <td>{{beer.type}}</td>
-          <td>{{beer.abv}}</td>
+          <td><h3>{{beer.name}}</h3></td>
+          <td><h3>{{beer.type}}</h3></td>
+          <td><h3>{{beer.abv}}</h3></td>
           <td class='text-right'>
             <button ng-click='getBeer(beer._id)' class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
             <button ng-click='deleteBeer(beer._id)' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
@@ -64,7 +64,7 @@
   <div ng-show='edit'>
 
   <form>
-      <h2>Edit Beer</h2>
+      <h2 class='whitetext'>Edit Beer</h2>
       <div class="form-group">
         <input type="text" ng-model="beerEdit.name" class="form-control" id="name" placeholder="Enter the beer name" required>
       </div>
